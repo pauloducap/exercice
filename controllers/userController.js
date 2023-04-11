@@ -97,7 +97,7 @@ exports.getUserById = async (req, res) => {
   }
 };
 exports.searchUsers = async (req, res) => {
-  const { searchTerm } = req.query;
+  const searchTerm = req.params.searchTerm;
 
   try {
     const users = await User.find({ $text: { $search: searchTerm } });
