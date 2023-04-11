@@ -1,3 +1,4 @@
+
 # Online Store API by Abeille Paul-Antoine
 Ce projet est une API pour un magasin en ligne, construite avec Node.js, Express et MongoDB. L'API permet la gestion des utilisateurs et des produits.
 
@@ -9,13 +10,13 @@ Ce projet est une API pour un magasin en ligne, construite avec Node.js, Express
 * Suppression d'un utilisateur : DELETE /api/users/:id
 * Mise à jour d'un utilisateur : PUT /api/users/:id
 * Récupération d'un utilisateur par ID : GET /api/users/:id
-* Recherche d'utilisateurs : GET /api/users/search?searchTerm=mettrecequelonveutici
+* Recherche d'utilisateurs : GET /api/users/search/ecrire ici
 ### Produits
 * Récupération de tous les produits : GET /api/products
 * Création d'un produit : POST /api/products
 * Mise à jour d'un produit : PUT /api/products/:id
 * Suppression d'un produit : DELETE /api/products/:id
-* Recherche de produits : GET /api/products/search?searchTerm=mettrecequelonveutici
+* Recherche de produits : GET /api/products/search/ecrire ici
 ## Structure du projet
 * index.js : point d'entrée de l'application, configuration d'Express et de MongoDB, déclaration des routes pour les utilisateurs et les produits, et écoute sur un port spécifique.
 * /routes/users.js : définition des routes pour les utilisateurs, en associant chaque route à une fonction de contrôleur dans userController.js.
@@ -35,3 +36,38 @@ Pour les POST :  ![](img/image1post.png) \
 Pour les GET :  ![](img/image4get.png)\
 Pour les PUT :  ![](img/image6put.png)\
 Pour les DELETE :  ![](img/image7delete.png)
+
+Voici du json pour tester :\
+register : \
+{
+  "username": "testuser",
+  "email": "testuser@email.com",
+  "password": "testpassword"
+}
+
+login  : \
+{
+  "email": "testuser@email.com",
+  "password": "testpassword"
+}
+
+add product : \
+{
+  "name": "NIKE",
+  "description": "This is a new product",
+  "price": 29.99,
+  "stock": 10
+}
+
+update product : \
+{
+  "name": "Updated Product",
+  "description": "This is an updated example product.",
+  "price": 19.99,
+  "stock": 200
+}
+
+Pour rechercher un article qui contient NIKE, on fait un get avec ça : \
+http://localhost:3000/api/products/search/NIKE
+
+Je vous laisse libre de faire les tests que vous souhaitez .
