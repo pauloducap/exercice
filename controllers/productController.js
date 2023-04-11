@@ -57,3 +57,14 @@ exports.getProductById = async (req, res) => {
     res.status(500).json({ message: 'Server error', error });
   }
 };
+
+exports.searchProducts = async (req, res) => {
+  const { searchTerm } = req.query;
+
+  try {
+    const products = await Product.find({ $text: { $search: searchTerm } });
+    res.status(200).json({ products });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
+  }
+};

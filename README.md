@@ -1,4 +1,4 @@
-# Online Store API
+# Online Store API by Abeille Paul-Antoine
 Ce projet est une API pour un magasin en ligne, construite avec Node.js, Express et MongoDB. L'API permet la gestion des utilisateurs et des produits.
 
 ## Fonctionnalités de l'API
@@ -9,12 +9,13 @@ Ce projet est une API pour un magasin en ligne, construite avec Node.js, Express
 * Suppression d'un utilisateur : DELETE /api/users/:id
 * Mise à jour d'un utilisateur : PUT /api/users/:id
 * Récupération d'un utilisateur par ID : GET /api/users/:id
+* Recherche d'utilisateurs : GET /api/users/search?searchTerm=mettrecequelonveutici
 ### Produits
 * Récupération de tous les produits : GET /api/products
 * Création d'un produit : POST /api/products
 * Mise à jour d'un produit : PUT /api/products/:id
 * Suppression d'un produit : DELETE /api/products/:id
-* Récupération d'un produit par ID : GET /api/products/:id
+* Recherche de produits : GET /api/products/search?searchTerm=mettrecequelonveutici
 ## Structure du projet
 * index.js : point d'entrée de l'application, configuration d'Express et de MongoDB, déclaration des routes pour les utilisateurs et les produits, et écoute sur un port spécifique.
 * /routes/users.js : définition des routes pour les utilisateurs, en associant chaque route à une fonction de contrôleur dans userController.js.

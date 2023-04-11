@@ -96,3 +96,13 @@ exports.getUserById = async (req, res) => {
     res.status(500).json({ message: 'Server error', error });
   }
 };
+exports.searchUsers = async (req, res) => {
+  const { searchTerm } = req.query;
+
+  try {
+    const users = await User.find({ $text: { $search: searchTerm } });
+    res.status(200).json({ users });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
+  }
+};
